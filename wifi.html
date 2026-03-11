@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WiFi QR Generator - QR Forge - AviNav</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <nav class="navbar clay-panel">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-qrcode"></i> QR Forge - AviNav
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="upi.html" class="nav-link">UPI</a>
+                <a href="whatsapp.html" class="nav-link">WhatsApp</a>
+                <a href="wifi.html" class="nav-link active">WiFi</a>
+                <a href="universal.html" class="nav-link">Universal</a>
+            </div>
+            <button class="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="generator-layout">
+            <!-- Form Section -->
+            <div class="generator-form-panel clay-panel fade-in-up">
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 30px;">
+                    <div class="card-icon" style="margin: 0;"><i class="fa-solid fa-wifi"></i></div>
+                    <h2>WiFi QR</h2>
+                </div>
+
+                <form id="wifiForm">
+                    <div class="form-group">
+                        <label for="wifiSsid">Network Name (SSID) *</label>
+                        <input type="text" id="wifiSsid" class="clay-input" placeholder="e.g. MyHomeNetwork" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="wifiPassword">Password</label>
+                        <input type="password" id="wifiPassword" class="clay-input" placeholder="Network password">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="wifiSecurity">Security Type</label>
+                        <select id="wifiSecurity" class="clay-input">
+                            <option value="WPA">WPA/WPA2</option>
+                            <option value="WEP">WEP</option>
+                            <option value="nopass">None</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="toggle-wrapper" style="margin-top:20px;">
+                            <input type="checkbox" id="wifiHidden">
+                            <div class="toggle-slider"></div>
+                            <span style="font-weight:600; color:var(--text-main);">Hidden Network</span>
+                        </label>
+                    </div>
+
+                    <div style="display:flex; gap: 15px; margin-top: 30px;">
+                        <button type="button" id="generateWifiBtn" class="clay-btn secondary clay-btn-fluid"
+                            style="flex: 1;"><i class="fa-solid fa-wand-magic-sparkles"></i> Generate QR</button>
+                        <button type="reset" class="clay-btn primary" title="Reset Form"><i
+                                class="fa-solid fa-rotate-right"></i></button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Preview Section -->
+            <div class="generator-preview-panel fade-in-up-delay-1">
+                <div class="qr-box" id="qrcode">
+                    <!-- QR code will be generated here -->
+                </div>
+
+                <div class="qr-actions">
+                    <button class="clay-btn primary" id="downloadBtn"><i class="fa-solid fa-download"></i>
+                        Download</button>
+                    <button class="clay-btn primary" id="copyBtn"><i class="fa-solid fa-copy"></i> Copy Data</button>
+                </div>
+
+                <p style="margin-top: 20px; text-align: center; color: var(--text-muted); font-size: 0.9rem;">
+                    Guests can scan this QR with their camera to join your WiFi instantly.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

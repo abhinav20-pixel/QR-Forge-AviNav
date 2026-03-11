@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPI QR Generator - QR Forge - AviNav</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <nav class="navbar clay-panel">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-qrcode"></i> QR Forge - AviNav
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="upi.html" class="nav-link active">UPI</a>
+                <a href="whatsapp.html" class="nav-link">WhatsApp</a>
+                <a href="wifi.html" class="nav-link">WiFi</a>
+                <a href="universal.html" class="nav-link">Universal</a>
+            </div>
+            <button class="mobile-menu-btn"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="generator-layout">
+            <!-- Form Section -->
+            <div class="generator-form-panel clay-panel fade-in-up">
+                <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 30px;">
+                    <div class="card-icon" style="margin: 0;"><i class="fa-brands fa-google-pay"></i></div>
+                    <h2>UPI QR Generator</h2>
+                </div>
+
+                <form id="upiForm">
+                    <div class="form-group">
+                        <label for="upiId">UPI ID (VPA) *</label>
+                        <input type="text" id="upiId" class="clay-input" placeholder="e.g. john@ybl" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="payeeName">Payee Name *</label>
+                        <input type="text" id="payeeName" class="clay-input" placeholder="e.g. John Doe" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="amount">Amount (INR) <span
+                                style="color:var(--text-muted);font-weight:normal;">(Optional)</span></label>
+                        <input type="number" id="amount" class="clay-input" placeholder="e.g. 500.00" min="0"
+                            step="0.01">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="note">Transaction Note <span
+                                style="color:var(--text-muted);font-weight:normal;">(Optional)</span></label>
+                        <input type="text" id="note" class="clay-input" placeholder="e.g. Payment for Services">
+                    </div>
+
+                    <div style="display:flex; gap: 15px; margin-top: 30px;">
+                        <button type="button" id="generateUpiBtn" class="clay-btn secondary clay-btn-fluid"
+                            style="flex: 1;"><i class="fa-solid fa-wand-magic-sparkles"></i> Generate QR</button>
+                        <button type="reset" class="clay-btn primary" title="Reset Form"><i
+                                class="fa-solid fa-rotate-right"></i></button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Preview Section -->
+            <div class="generator-preview-panel fade-in-up-delay-1">
+                <div class="qr-box" id="qrcode">
+                    <!-- QR code will be generated here -->
+                </div>
+
+                <div class="qr-actions">
+                    <button class="clay-btn primary" id="downloadBtn"><i class="fa-solid fa-download"></i>
+                        Download</button>
+                    <button class="clay-btn primary" id="copyBtn"><i class="fa-solid fa-copy"></i> Copy Link</button>
+                </div>
+
+                <p style="margin-top: 20px; text-align: center; color: var(--text-muted); font-size: 0.9rem;">
+                    Scan with any UPI app
+                    (Google Pay, PhonePe, Paytm, etc.)
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
